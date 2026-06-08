@@ -54,14 +54,10 @@
   .goal { color: var(--muted); font-size: 15px; max-width: 820px; line-height: 1.55; }
 
   .controls {
-    display: flex; flex-direction: column; gap: 10px;
-    margin: 16px 0 0; padding: 12px 14px;
-    background: rgba(12, 17, 33, 0.92); border: 1px solid var(--border); border-radius: 14px;
-    position: sticky; top: 10px; z-index: 50;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,.55);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+    margin: 18px 0 16px; padding: 12px 14px;
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
   }
-  .ctl-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
   .seg { display: inline-flex; background: rgba(0,0,0,.25); border: 1px solid var(--border); border-radius: 10px; padding: 3px; gap: 3px; }
   .seg button {
     border: 0; background: transparent; color: var(--muted); cursor: pointer;
@@ -211,168 +207,45 @@
   .legend span { display: inline-flex; align-items: center; gap: 6px; }
   .legend i { width: 12px; height: 12px; border-radius: 4px; display: inline-block; }
 
-  /* skill definition card */
-  .skillcard {
-    margin-top: 16px; padding: 14px 16px; border-radius: 14px;
-    background: linear-gradient(135deg, rgba(96,165,250,.12), rgba(167,139,250,.09));
-    border: 1px solid var(--border);
-  }
-  .skillhead { display: flex; gap: 12px; align-items: flex-start; }
-  .skillhead .ic { width: 38px; height: 38px; flex: none; border-radius: 10px; display: grid; place-items: center; font-size: 20px; background: rgba(0,0,0,.3); border: 1px solid var(--border); }
-  .skname { font-weight: 800; font-size: 15px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
-  .skname .tag { font-size: 9.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #061024; background: linear-gradient(90deg, var(--blue), var(--violet)); padding: 2px 7px; border-radius: 6px; }
-  .skdesc { color: var(--muted); font-size: 13px; line-height: 1.55; margin-top: 5px; }
-  .skdesc b { color: var(--text); }
-  .skmeta { margin-top: 11px; display: grid; gap: 6px; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
-  .skmeta b { color: var(--text); }
-  .skmeta code { font-family: var(--mono); font-size: 11.5px; color: #cfe1ff; background: rgba(0,0,0,.28); border: 1px solid var(--border); border-radius: 5px; padding: 1px 5px; }
-
-  .skilltable { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12.5px; }
-  .skilltable th { text-align: left; vertical-align: top; white-space: nowrap; width: 118px; color: var(--muted); font-weight: 700; background: rgba(0,0,0,.22); border: 1px solid var(--border); padding: 8px 10px; }
-  .skilltable td { vertical-align: top; border: 1px solid var(--border); padding: 8px 10px; line-height: 1.55; color: var(--text); }
-  .skilltable td code { font-family: var(--mono); font-size: 11.5px; color: #cfe1ff; }
-  .skilltable td b { color: var(--text); }
-  .skilltable td em { color: var(--gold); font-style: italic; }
-  .skchips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .skchip { font-family: var(--mono); font-size: 11px; padding: 2px 8px; border-radius: 7px; border: 1px solid var(--border); background: rgba(0,0,0,.28); color: var(--text); }
-  .skchip.mode { color: #04140c; background: var(--green); border-color: transparent; font-weight: 700; }
-  .skchip.tool { color: #061024; background: linear-gradient(90deg, var(--blue), var(--violet)); border-color: transparent; font-weight: 700; }
-  .skscope { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 4px; }
-  .skscope li { color: var(--muted); }
-  .skscope li::before { content: "✗"; color: #f87171; font-weight: 800; margin-right: 7px; }
-
   .stepbar { display: flex; gap: 6px; margin: 4px 0 16px; flex-wrap: wrap; }
   .pip { font-size: 11px; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 4px 11px; background: var(--panel); transition: .2s; }
   .pip.active { color: #fff; border-color: var(--gold); background: var(--gold-soft); }
   .pip.done { color: var(--green); border-color: rgba(52,211,153,.4); }
 
-  /* concrete data-preparation card */
-  .prep { display: flex; gap: 12px; align-items: flex-start; margin-top: 9px; }
-  .prep .cxr { width: 76px; height: 76px; flex: none; border-radius: 10px; object-fit: cover; border: 1px solid var(--border); box-shadow: 0 4px 14px rgba(0,0,0,.45); }
-  .prep .prepflow { flex: 1; min-width: 0; }
-  .chip.plain .k, .chip.lock .k { font-weight: 400; }
-
-  /* user's plaintext question bubble */
-  .qbubble {
-    display: flex; align-items: flex-start; gap: 8px; margin: 9px 0 2px;
-    background: var(--green-soft); border: 1px solid rgba(52,211,153,.40);
-    border-radius: 12px; padding: 9px 11px; font-size: 13.5px; line-height: 1.5; color: var(--text);
-  }
-  .qlabel {
-    flex: none; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
-    color: #04140c; background: var(--green); border-radius: 6px; padding: 2px 6px; margin-top: 1px;
-  }
-
-  /* top bar: hero on the left, architecture figure in the top-right corner */
-  .topbar { display: flex; align-items: flex-start; gap: 24px; }
-  .topbar .hero { flex: 1 1 auto; min-width: 0; margin-bottom: 0; }
-  .archpanel { flex: 0 0 470px; width: 470px; }
-  .arch-title { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: 0 0 6px 2px; }
-  .arch-title span { text-transform: none; letter-spacing: 0; }
-  .archframe {
-    position: relative; line-height: 0; border-radius: 12px; overflow: hidden;
-    background: #fff; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  }
-  .archframe img { width: 100%; height: auto; display: block; }
-  .arch-spot {
-    position: absolute; border: 2.5px solid var(--gold); border-radius: 8px;
-    box-shadow: 0 0 0 3000px rgba(4,7,18,.55), 0 0 16px 3px rgba(251,191,36,.6);
-    transition: left .55s cubic-bezier(.45,.05,.25,1), top .55s cubic-bezier(.45,.05,.25,1),
-                width .55s cubic-bezier(.45,.05,.25,1), height .55s cubic-bezier(.45,.05,.25,1),
-                opacity .35s ease;
-    opacity: 0; pointer-events: none; z-index: 5;
-  }
-  .arch-spot.show { opacity: 1; }
-  .arch-cap { margin: 9px 2px 0; font-size: 12px; color: var(--muted); }
-  .arch-cap b { color: var(--gold); }
-
-  @media (max-width: 1100px) {
-    .topbar { flex-direction: column; gap: 14px; }
-    .archpanel { flex: none; width: 100%; max-width: 720px; }
-  }
   @media (max-width: 980px) {
     .grid { grid-template-columns: 1fr; }
     .bottom { grid-template-columns: 1fr; }
     #fx { display: none; }
-    .arch-spot { transition: opacity .3s ease; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="topbar">
-    <header class="hero">
-      <span class="badge"><span class="dot"></span> Privacy-Preserving Agent Skill · Live Walkthrough</span>
-      <h1>A <span class="grad">Privacy-Preserving Skill</span> the Agent Can Plan &amp; Invoke</h1>
-      <p class="goal">
-        <b>Goal.</b> Diagnose diseases and recommend treatment plans from medical imaging while keeping the
-        user's sensitive data private. Instead of exposing a pile of low-level tools, we package the whole
-        secure pipeline as <b>one skill</b> — and design the framework so an agent can <b>plan</b> it,
-        <b>invoke</b> it, and <b>execute</b> it as <b>secure two-party computation</b> over encrypted data.
-      </p>
-    </header>
-    <div class="archpanel">
-      <div class="arch-title">🗺️ System Architecture <span>· highlight follows the step</span></div>
-      <div class="archframe">
-        <img src="architecture.png" alt="System architecture (Fig. 1)" />
-        <div class="arch-spot" id="archSpot"></div>
-      </div>
-      <div class="arch-cap">Current focus: <b id="archCap">—</b></div>
-    </div>
-  </div>
+  <header class="hero">
+    <span class="badge"><span class="dot"></span> Privacy-Preserving Agent Skill · Live Walkthrough</span>
+    <h1>A <span class="grad">Privacy-Preserving Skill</span> the Agent Can Plan &amp; Invoke</h1>
+    <p class="goal">
+      <b>Goal.</b> Diagnose diseases and recommend treatment plans from medical imaging while keeping the
+      user's sensitive data private. Instead of exposing a pile of low-level tools, we package the whole
+      secure pipeline as <b>one skill</b> — and design the framework so an agent can <b>plan</b> it,
+      <b>invoke</b> it, and <b>execute</b> it as <b>secure two-party computation</b> over encrypted data.
+    </p>
+  </header>
 
-  <div class="controls" id="controls">
-    <div class="ctl-row">
-      <span class="ctl-label">Task mode</span>
-      <div class="seg" id="modeSeg">
-        <button data-mode="Diagnosis_Only">Diagnosis_Only</button>
-        <button data-mode="Treatment_Only">Treatment_Only</button>
-        <button data-mode="Diagnosis_and_Treatment" class="active">Diagnosis_and_Treatment</button>
-      </div>
-      <div class="speed">Speed
-        <input id="speed" type="range" min="0.5" max="2" step="0.25" value="1" />
-      </div>
-      <button class="btn" id="stepBtn">Step ▸</button>
-      <button class="btn primary" id="playBtn">▶ Play</button>
-      <button class="btn" id="resetBtn">↻ Reset</button>
+  <div class="controls">
+    <span class="ctl-label">Task mode</span>
+    <div class="seg" id="modeSeg">
+      <button data-mode="Diagnosis_Only">Diagnosis_Only</button>
+      <button data-mode="Treatment_Only">Treatment_Only</button>
+      <button data-mode="Diagnosis_and_Treatment" class="active">Diagnosis_and_Treatment</button>
     </div>
-  </div>
-
-  <div class="skillcard">
-    <div class="skillhead">
-      <span class="ic">📜</span>
-      <div>
-        <div class="skname">Skill Definition <span class="tag">SKILL.md</span></div>
-        <div class="skdesc">What this skill <b>is</b>, what it <b>can do</b>, and where it <b>stops</b> — the agent reads this to decide when to plan &amp; invoke it.</div>
-      </div>
+    <div class="spacer"></div>
+    <div class="speed">Speed
+      <input id="speed" type="range" min="0.5" max="2" step="0.25" value="1" />
     </div>
-    <table class="skilltable">
-      <tr><th>name</th><td><code>privacy-preserving-diagnosis-treatment</code></td></tr>
-      <tr><th>archetype</th><td>secure-skill &nbsp;·&nbsp; <b>branch</b> health · privacy</td></tr>
-      <tr><th>description</th><td>Privacy-preserving disease <b>diagnosis</b> and <b>treatment</b> recommendation from medical images, executed end-to-end as <b>secure computation</b> so the user's data never leaves the trusted zone in the clear. <em>Not a substitute for professional medical advice.</em></td></tr>
-      <tr><th>capabilities</th><td><div class="skchips">
-        <span class="skchip">medical_image_diagnosis</span>
-        <span class="skchip">treatment_recommendation</span>
-      </div></td></tr>
-      <tr><th>task modes</th><td><div class="skchips">
-        <span class="skchip mode">Diagnosis_Only</span>
-        <span class="skchip mode">Treatment_Only</span>
-        <span class="skchip mode">Diagnosis_and_Treatment</span>
-      </div></td></tr>
-      <tr><th>allowed tools</th><td><div class="skchips">
-        <span class="skchip tool">Secure CNN</span>
-        <span class="skchip tool">Embedding Adapter (local)</span>
-        <span class="skchip tool">Private RAG</span>
-      </div></td></tr>
-      <tr><th>not my scope</th><td><ul class="skscope">
-        <li>Prescribing or administering medications / treatments</li>
-        <li>Diagnosing or triaging an individual patient as clinical ground truth</li>
-        <li>Replacing in-person examination or professional medical judgment</li>
-        <li>Emergency medical triage</li>
-        <li>Defending against malicious (active) adversaries or colluding computing parties</li>
-      </ul></td></tr>
-      <tr><th>metadata</th><td>version <code>1.0.0</code> · tier <code>execution</code> · domain <code>health · secure-ML</code> · vibe <i>“Confidential clinical insight over encrypted data”</i></td></tr>
-    </table>
+    <button class="btn" id="stepBtn">Step ▸</button>
+    <button class="btn primary" id="playBtn">▶ Play</button>
+    <button class="btn" id="resetBtn">↻ Reset</button>
   </div>
 
   <div class="stepbar" id="stepbar"></div>
@@ -386,24 +259,14 @@
         <div class="col-title">① &nbsp;Client Side · Trusted</div>
         <div class="zone trusted" id="zoneTrusted">
           <span class="zone-tag">🔒 Trusted Zone</span>
-          <div class="card node" id="tzPrep">
-            <div class="ct"><span class="ic">🖼️</span> Input &amp; Data Prep <span class="check">✓</span></div>
-            <div class="prep">
-              <img class="cxr" src="cxr.png" alt="input chest X-ray" />
-              <div class="prepflow">
-                <div class="sub">The input is this chest X-ray. The user splits it into <b>two shares</b>, encrypts one share with the <b>session key k</b>, and wraps <b>k</b> with the server's public key.</div>
-                <div>
-                  <span class="chip plain">***0 <span class="k">plain share → model owner</span></span>
-                  <span class="chip lock">***1 <span class="k">Enc(k, share) → cloud</span></span>
-                  <span class="chip lock">y4f8k9sQxv2Lz7P3 <span class="k">Enc(pk, k)</span></span>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="card node" id="tzUser">
-            <div class="ct"><span class="ic">🧑‍⚕️</span> User · plaintext question <span class="check">✓</span></div>
-            <div class="qbubble"><span class="qlabel">plaintext</span><span id="tzQueryText">“…”</span></div>
-            <div class="sub">Holds session key <b>k</b> and the raw image — the trusted owner of the data. Sends this <b>plaintext question</b> plus the prepared shares to the agent.</div>
+            <div class="ct"><span class="ic">🧑‍⚕️</span> User <span class="check">✓</span></div>
+            <div class="sub">Holds session key <b>k</b> and the raw image. Splits it into a <b>share x₀</b> (for the Model Owner) and the <b>share encrypted by the session key Enc(k, x₁)</b> (for the Cloud).</div>
+            <div>
+              <span class="chip plain">x₀ <span class="k">→ model owner</span></span>
+              <span class="chip lock">Enc(k, x₁) <span class="k">→ cloud</span></span>
+              <span class="chip lock">Enc(pk, k)</span>
+            </div>
           </div>
           <div class="card node" id="tzEmbed">
             <div class="ct"><span class="ic">🔗</span> Embedding Adapter <span class="localbadge">local</span> <span class="check">✓</span></div>
@@ -412,6 +275,10 @@
           <div class="card node" id="tzLLM">
             <div class="ct"><span class="ic">🧠</span> Local Language Model <span class="check">✓</span></div>
             <div class="sub">Combines returned shares and decrypts — the only place plaintext results are ever reconstructed.</div>
+          </div>
+          <div class="card node" id="tzQuery">
+            <div class="ct"><span class="ic">💬</span> Query / Response <span class="check">✓</span></div>
+            <div class="sub" id="tzQueryText">“Check this chest X-ray for disease, and what the treatment might be?”</div>
           </div>
         </div>
       </div>
@@ -439,6 +306,15 @@
                 <td>In: task_mode, encrypted image / diagnosis &middot; Out: encrypted diagnosis &amp;/or treatment</td>
               </tr>
             </table>
+            <div class="sub" style="margin-top:10px;color:var(--muted)">Allowed tools</div>
+            <table class="skill-table">
+              <tr><th>Secure CNN</th><th>Embedding Adapter (local)</th><th>Private RAG</th></tr>
+              <tr>
+                <td>2-party MPC inference over the secret-shared chest X-ray &mdash; classifies disease without ever revealing the image.</td>
+                <td>Runs locally in the Trusted Zone (no ciphertext-domain embedding): reconstructs the diagnosis, embeds it, and re-secret-shares it for RAG.</td>
+                <td>2-party MPC retrieval over the secret-shared query &mdash; fetches treatment evidence while keeping the query hidden.</td>
+              </tr>
+            </table>
           </div>
 
           <div class="card" id="cardInvoke">
@@ -456,19 +332,19 @@
           <div class="card node" id="srvCNN">
             <div class="srv"><span class="ic" style="font-size:15px">🧬</span>
               <div><div class="ct" style="font-size:13.5px">Secure CNN <span class="sid">Model Owner</span> <span class="check">✓</span></div>
-              <div class="role">Holds CNN weights + plaintext share x₀; runs 2-party MPC with the cloud</div></div>
+              <div class="role">Holds CNN weights + its share x₀; runs 2-party MPC with the cloud</div></div>
             </div>
           </div>
           <div class="card node" id="srvRAG">
             <div class="srv"><span class="ic" style="font-size:15px">📚</span>
               <div><div class="ct" style="font-size:13.5px">Private RAG <span class="sid">Model Owner</span> <span class="check">✓</span></div>
-              <div class="role">Holds RAG corpus + plaintext share q₀; runs 2-party MPC with the cloud</div></div>
+              <div class="role">Holds RAG corpus + its share q₀; runs 2-party MPC with the cloud</div></div>
             </div>
           </div>
           <div class="card node" id="srvCloud">
             <div class="srv"><span class="ic" style="font-size:15px">☁️</span>
               <div><div class="ct" style="font-size:13.5px">Cloud Compute Platform <span class="sid">aux · (pk, sk)</span> <span class="check">✓</span></div>
-              <div class="role">Always-public auxiliary compute. Recovers its encrypted share with sk and jointly computes — never sees the full input</div></div>
+              <div class="role">Always-public auxiliary compute. Recovers its share by decrypting the encrypted session key with sk, then decrypting the share encrypted by the session key — never sees the full input</div></div>
             </div>
           </div>
         </div>
@@ -477,8 +353,8 @@
   </div>
 
   <div class="legend">
-    <span><i style="background:var(--green)"></i> plaintext share → Model Owner</span>
-    <span><i style="background:var(--gold)"></i> encrypted share / key → Cloud</span>
+    <span><i style="background:var(--green)"></i> share → Model Owner</span>
+    <span><i style="background:var(--gold)"></i> share encrypted by session key / encrypted session key → Cloud</span>
     <span><i style="background:linear-gradient(90deg,var(--blue),var(--violet))"></i> 2-party MPC messages / result shares</span>
     <span><i style="background:transparent;border:1px dashed var(--muted)"></i> embedding &amp; decryption happen only in the trusted zone</span>
   </div>
@@ -499,15 +375,10 @@
 (() => {
   "use strict";
 
-  // ---------- concrete example data (shown flying between parties) ----------
-  // Two secret shares of the chest X-ray (***0 plaintext, ***1 encrypted),
-  // and the session key wrapped under the server public key.
-  const DATA = { encKey: "y4f8k9sQxv2Lz7P3" };
-
   // ---------- scenario data ----------
   const SCENARIO = {
     Diagnosis_Only: {
-      query: "“Check this chest X-ray for any signs of disease?”",
+      query: "“Check this chest X-ray — is there any sign of disease?”",
       pipeline: ["cnn"],
       needsEmbed: false,
       diagnosis: "Pulmonary fibrosis",
@@ -523,7 +394,7 @@
       treatment: "Start antifibrotic medication (e.g. pirfenidone or nintedanib) and monitor lung function regularly.",
     },
     Diagnosis_and_Treatment: {
-      query: "“Can you take a look at this chest X-ray and let me know if there's anything wrong, and what the treatment might be?”",
+      query: "“Check this chest X-ray for disease, and what the treatment might be?”",
       pipeline: ["cnn", "emb", "rag"],
       needsEmbed: true,
       diagnosis: "Pulmonary fibrosis",
@@ -533,26 +404,13 @@
   };
 
   // MPC tools = secure 2-party computation between a Model Owner and the Cloud.
-  // Shares are shown as concrete masked tokens (***…) rather than abstract math.
   const MPC = {
-    cnn: { node: "srvCNN", label: "Secure CNN", owner: "CNN Model Owner", arch: "cnn",
-           inPlain: "***0", inEnc: "***1", outPlain: "***r0", outEnc: "***r1",
-           trace: "Secure 2-party CNN inference: the <b>CNN Model Owner</b> gets plaintext share <b>***0</b>; the <b>Cloud Compute Platform</b> decrypts the session key (<b>y4f8k9sQxv2Lz7P3</b>) and recovers share <b>***1</b>. They jointly compute over shares — neither sees the image — yielding a secret-shared diagnosis (<b>***r0</b>, <b>***r1</b>)." },
-    rag: { node: "srvRAG", label: "Private RAG", owner: "RAG Model Owner", arch: "rag",
-           inPlain: "***q0", inEnc: "***q1", outPlain: "***o0", outEnc: "***o1",
-           trace: "Secure 2-party Private RAG: the <b>RAG Model Owner</b> gets plaintext share <b>***q0</b>; the <b>Cloud Compute Platform</b> recovers share <b>***q1</b> with its private key. They jointly retrieve treatment evidence over shares — the query stays hidden — returning secret-shared results (<b>***o0</b>, <b>***o1</b>)." },
-  };
-
-  // ---------- architecture-figure focus regions (% of the image) ----------
-  const ARCH = {
-    prep:       { l: 0.4,  t: 22, w: 14.8, h: 26, name: "Trusted Zone · split image & encrypt shares" },
-    query:      { l: 13.5, t: 23, w: 33.5, h: 25, name: "① Query — send prompt + shares to the agent" },
-    planning:   { l: 22.5, t: 1,  w: 44,   h: 20, name: "② Skill Planning" },
-    invocation: { l: 67,   t: 1,  w: 32.5, h: 22, name: "③ Skill Invocation" },
-    cnn:        { l: 47.5, t: 44, w: 21.5, h: 33, name: "④ Skill Execution · Step 1 — Secure CNN" },
-    embed:      { l: 65.5, t: 44, w: 33.5, h: 25, name: "④ Skill Execution · Step 2 — Embedding Adapter" },
-    rag:        { l: 47.5, t: 69, w: 51.5, h: 29, name: "④ Skill Execution · Step 3 — Private RAG" },
-    response:   { l: 13.5, t: 52, w: 33.5, h: 24, name: "④ Response — Local LLM reconstructs the answer" },
+    cnn: { node: "srvCNN", label: "Secure CNN", owner: "CNN Model Owner",
+           plain: "x₀", encShare: "Enc(k, x₁)", resPlain: "res₀", resEnc: "Enc(k, res₁)",
+           trace: "Secure 2-party CNN inference: the <b>CNN Model Owner</b> holds its share <b>x₀</b>; the <b>Cloud Compute Platform</b> uses its private key <b>sk</b> to decrypt the encrypted session key <b>Enc(pk, k) → k</b>, then uses <b>k</b> to decrypt the share encrypted by the session key <b>Enc(k, x₁)</b> and recover its share. They jointly compute over shares — neither sees the image — yielding a secret-shared diagnosis." },
+    rag: { node: "srvRAG", label: "Private RAG", owner: "RAG Model Owner",
+           plain: "q₀", encShare: "Enc(k, q₁)", resPlain: "out₀", resEnc: "Enc(k, out₁)",
+           trace: "Secure 2-party Private RAG: the <b>RAG Model Owner</b> holds its share <b>q₀</b>; the <b>Cloud Compute Platform</b> uses its private key <b>sk</b> to decrypt the encrypted session key <b>Enc(pk, k) → k</b>, then uses <b>k</b> to decrypt the share encrypted by the session key <b>Enc(k, q₁)</b> and recover its share. They jointly retrieve treatment evidence over shares — the query stays hidden — returning secret-shared results." },
   };
 
   // ---------- DOM ----------
@@ -560,17 +418,7 @@
   const fx = $("fx"), traceEl = $("trace"), answerEl = $("answer");
   const agentHead = $("agentHead"), agentStatus = $("agentStatus");
   const stepbar = $("stepbar"), invokeCode = $("invokeCode");
-  const archSpot = $("archSpot"), archCap = $("archCap");
-  const allNodes = ["cardPlan","cardInvoke","srvCNN","srvRAG","srvCloud","tzPrep","tzUser","tzEmbed","tzLLM"];
-
-  function highlightArch(key) {
-    const r = ARCH[key];
-    if (!r) { archSpot.classList.remove("show"); archCap.textContent = "—"; return; }
-    archSpot.style.left = r.l + "%"; archSpot.style.top = r.t + "%";
-    archSpot.style.width = r.w + "%"; archSpot.style.height = r.h + "%";
-    archSpot.classList.add("show");
-    archCap.textContent = r.name;
-  }
+  const allNodes = ["cardPlan","cardInvoke","srvCNN","srvRAG","srvCloud","tzUser","tzEmbed","tzLLM","tzQuery"];
 
   let mode = "Diagnosis_and_Treatment";
   let steps = [];
@@ -644,17 +492,12 @@
   id = <span class="id">Skill-1</span>,
   task_mode = <span class="en">${m}</span>,
   inputs = {
-    plaintext_share_0 = <span class="en">***0</span>,
-    encrypted_share_1 = <span class="en">***1</span>,
-    encrypted_session_key = <span class="en">y4f8k9sQxv2Lz7P3</span>
+    share_0 = x₀,
+    session_key_encrypted_share_1 = Enc(k, x₁),
+    encrypted_session_key = Enc(pk, k)
   }
 )`;
   }
-
-  const promptPacket = (m) => {
-    const q = SCENARIO[m].query.replace(/[“”]/g, "");
-    return "“" + (q.length > 30 ? q.slice(0, 30) + "…" : q) + "”";
-  };
 
   // ---------- step builder ----------
   function buildSteps(m) {
@@ -662,32 +505,17 @@
     const out = [];
 
     out.push({
-      phase: "① Data Prep",
-      status: "Trusted Zone: split image → shares, encrypt",
-      run: async () => {
-        highlightArch("prep");
-        setActive("tzPrep");
-        agentStatus.textContent = "Preparing data locally…";
-        await sleep(650);
-        logLine("① Data Prep", "User splits the chest X-ray into two shares <b>***0</b> and <b>***1</b>, encrypts one share with the session key <b>k</b>, and wraps <b>k</b> with the server's public key → <b>y4f8k9sQxv2Lz7P3</b>.");
-        logLine("", "The raw image never leaves the trusted zone.", true);
-        markDone("tzPrep");
-      },
-    });
-
-    out.push({
       phase: "① Query",
-      status: "User → Agent: prompt + prepared shares",
+      status: "User → Agent: sending secret-shared query",
       run: async () => {
-        highlightArch("query");
         setActive("tzUser");
         agentStatus.textContent = "Receiving query…";
-        await flyPacket("tzUser", "agentHead", promptPacket(m), "plain");
-        await flyPacket("tzUser", "agentHead", "***0", "plain");
-        await flyPacket("tzUser", "agentHead", "***1", "enc");
-        await flyPacket("tzUser", "agentHead", DATA.encKey, "enc");
+        await flyPacket("tzUser", "agentHead", "x₀ · share", "plain");
+        await flyPacket("tzUser", "agentHead", "Enc(k, x₁)", "enc");
+        await flyPacket("tzUser", "agentHead", "Enc(pk, k)", "enc");
         markDone("tzUser");
-        logLine("① Query", "User sends the <b>plaintext question</b> plus the prepared inputs: plaintext share <b>***0</b>, encrypted share <b>***1</b>, and the wrapped session key <b>y4f8k9sQxv2Lz7P3</b>.");
+        logLine("① Query", "User splits the input into two shares: <b>x₀</b> (for the Model Owner) and the share encrypted by the session key <b>Enc(k, x₁)</b> (for the Cloud), plus the encrypted session key <b>Enc(pk, k)</b> so the Cloud can recover its share.");
+        logLine("", "Raw image &amp; plaintext never leave the trusted zone.", true);
       },
     });
 
@@ -695,7 +523,6 @@
       phase: "② Skill Planning",
       status: "LLM planning — selecting a skill",
       run: async () => {
-        highlightArch("planning");
         agentHead.classList.add("thinking");
         agentStatus.textContent = "Planning… matching task to a skill";
         setActive("cardPlan");
@@ -711,7 +538,6 @@
       phase: "③ Skill Invocation",
       status: `Invoking Skill-1 · task_mode = ${m}`,
       run: async () => {
-        highlightArch("invocation");
         setActive("cardInvoke");
         agentStatus.textContent = `Invoking Skill-1 (${m})`;
         await typeInto(invokeCode, invokeHTML(m), 22);
@@ -726,13 +552,12 @@
           phase: "④ Local · Embedding Adapter",
           status: "Local embedding in the Trusted Zone",
           run: async () => {
-            highlightArch("embed");
             agentStatus.textContent = "Local embedding (trusted zone)";
-            await flyPacket("agentHead", "tzEmbed", "***r0 · ***r1", "result");
+            await flyPacket("agentHead", "tzEmbed", "res₀ · Enc(k, res₁)", "result");
             setActive("tzEmbed");
-            logLine("④ Embedding Adapter · local", "Runs <b>inside the Trusted Zone</b> — there is no ciphertext-domain embedding tool. The diagnosis is reconstructed locally, embedded into a RAG query, and <b>re-secret-shared</b> as <b>***q0</b>, <b>***q1</b> for the next MPC step.");
+            logLine("④ Embedding Adapter · local", "Runs <b>inside the Trusted Zone</b> — there is no ciphertext-domain embedding tool. The diagnosis is reconstructed locally, embedded into a RAG query, and <b>re-secret-shared</b> for the next MPC step.");
             await sleep(650);
-            await flyPacket("tzEmbed", "agentHead", "***q0 · ***q1", "plain");
+            await flyPacket("tzEmbed", "agentHead", "q₀ · Enc(k, q₁)", "plain");
             markDone("tzEmbed");
           },
         });
@@ -742,22 +567,21 @@
           phase: `④ MPC · ${t.label}`,
           status: `Secure 2-party execution — ${t.label}`,
           run: async () => {
-            highlightArch(t.arch);
             agentStatus.textContent = `Secure 2-party MPC — ${t.label}`;
             setActive(t.node);
-            await flyPacket("agentHead", t.node, t.inPlain, "plain");
-            await flyPacket("agentHead", "srvCloud", t.inEnc, "enc");
-            await flyPacket("agentHead", "srvCloud", DATA.encKey, "enc");
+            await flyPacket("agentHead", t.node, `${t.plain} · share`, "plain");
+            await flyPacket("agentHead", "srvCloud", t.encShare, "enc");
+            await flyPacket("agentHead", "srvCloud", "Enc(pk, k)", "enc");
             setActive("srvCloud");
-            logLine(`④ ${t.label} · setup`, `<b>${t.owner}</b> receives plaintext share <b>${t.inPlain}</b>; the <b>Cloud Compute Platform</b> decrypts <b>${DATA.encKey}</b> → <b>k</b>, then recovers share <b>${t.inEnc}</b> with its private key <b>sk</b>.`);
+            logLine(`④ ${t.label} · setup`, `<b>${t.owner}</b> receives its share <b>${t.plain}</b>; the <b>Cloud Compute Platform</b> first uses its private key <b>sk</b> to decrypt the encrypted session key <b>Enc(pk, k) → k</b>, then uses <b>k</b> to decrypt the share encrypted by the session key <b>${t.encShare}</b> to recover its share.`);
             await sleep(450);
             setActive(t.node, "srvCloud");
             await flyPacket(t.node, "srvCloud", "⇄ MPC", "result");
             await flyPacket("srvCloud", t.node, "⇄ MPC", "result");
             logLine(`④ ${t.label} · compute`, t.trace);
             await sleep(250);
-            await flyPacket(t.node, "agentHead", t.outPlain, "plain");
-            await flyPacket("srvCloud", "agentHead", t.outEnc, "result");
+            await flyPacket(t.node, "agentHead", t.resPlain, "plain");
+            await flyPacket("srvCloud", "agentHead", t.resEnc, "result");
             markDone(t.node, "srvCloud");
           },
         });
@@ -768,15 +592,15 @@
       phase: "⑤ Response",
       status: "Agent → Trusted Zone: returning encrypted shares",
       run: async () => {
-        highlightArch("response");
         agentStatus.textContent = "Returning encrypted result shares";
         setActive("tzLLM");
-        await flyPacket("agentHead", "tzLLM", "***r0 · ***r1", "result");
-        if (sc.treatment) await flyPacket("agentHead", "tzLLM", "***o0 · ***o1", "result");
+        await flyPacket("agentHead", "tzLLM", "res₀ + Enc(k, resᵢ)", "result");
+        if (sc.treatment) await flyPacket("agentHead", "tzLLM", "out₀ + Enc(k, outᵢ)", "result");
         logLine("⑤ Response", "Encrypted result shares returned. The <b>Local LLM</b> combines the shares and decrypts — the only place plaintext results are reconstructed.");
         markDone("tzLLM");
         await sleep(300);
         await renderAnswer(sc);
+        markDone("tzQuery");
         agentStatus.textContent = "Done ✓";
       },
     });
@@ -848,7 +672,6 @@
     if (newMode) mode = newMode;
     $("playBtn").textContent = "▶ Play";
     clearStates();
-    highlightArch(null);
     fx.innerHTML = "";
     traceEl.innerHTML = "";
     invokeCode.innerHTML = `<span class="muted">// awaiting invocation…</span>`;
